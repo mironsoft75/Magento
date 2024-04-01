@@ -6,7 +6,7 @@
 # 1. ExpendedCategoryTreeTab 
  *  Expand all selected category tabs and parent tabs on Admin Edit ProductPage.
 
-# 1. Export 
+# 2. Export 
  *  Export a product && Customer data  CSV daily.
  # Product(Need to Details)
    * We need the CSV to have the same data as this CSV (sku, name, product online(Enable or Disable), price, special price, special price from date and special price to date).
@@ -17,7 +17,9 @@
   * icecube:export:products.
   ## note 
    * File export in  var/export/ZOHO/customers/export_customers_$currentDate.csv.(You can change path).
-   * You can expand more columns. 
+   * You can expand more columns.
+  # 3. CategoryUrlRewrite 
+  *  After saving a category or product, this code deletes all default generated URLs. 
 
 ## CanonicalUrl
  # CmsPage
