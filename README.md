@@ -19,4 +19,8 @@
    * File export in  var/export/ZOHO/customers/export_customers_$currentDate.csv.(You can change path).
    * You can expand more columns. 
 
+## CanonicalUrl
+ # CmsPage
+ * Working  on  all Cms pages.
+
    
