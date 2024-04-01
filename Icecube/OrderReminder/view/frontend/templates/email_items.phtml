@@ -1,0 +1,71 @@
+<?php
+$dataValues = $block->getData('datavalues');
+$productData = $dataValues['data'];
+$CustomerName = $dataValues['customer_name'];
+$Add_To_Cart = $dataValues['Add_To_Cart'];
+?>
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom:20px;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .email-intro {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+    }
+
+    .cta-button {
+        background-color: #4CAF50;
+        color: white !important;
+        padding: 10px;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 5px;
+    }
+</style>
+
+<table>
+    <tr class="email-intro">
+        <td>
+            Hello, <?php echo $CustomerName;  ?>
+        </td>
+    </tr>
+</table>
+
+<table border='2'>
+    <thead>
+        <tr>
+            <?php foreach ($productData[0] as $key => $value) { ?>
+                <th><?php echo $key; ?></th>
+            <?php } ?>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($productData as $index => $product) { ?>
+            <tr>
+                <?php foreach ($product as $key => $value) { ?>
+                    <td><?php echo $value; ?></td>
+                <?php } ?>
+            </tr>
+        <?php } ?>
+    </tbody>
+</table>
+
+<p>
+    <a href="<?php echo $Add_To_Cart; ?>" class="cta-button">Add to Cart</a>
+</p>
+

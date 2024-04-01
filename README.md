@@ -20,6 +20,11 @@
    * You can expand more columns.
   # 3. CategoryUrlRewrite 
   *  After saving a category or product, this code deletes all default generated URLs. 
+  # 4. OrderReminder 
+  *  Those customers who have placed orders within 15 days will receive an email with details of their  ordered items.
+ # Commands 
+  * icecube:reminder.
+
 
 ## CanonicalUrl
  # CmsPage
