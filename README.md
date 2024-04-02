@@ -64,6 +64,21 @@
 
   ## 6.Chapagain(how to include Ajex). 
 
+  ## 7. ImportByCSV
+    * advanced_pricing.
+    * BundleProductCreate.
+    * ConfigurableProduct.
+    * CreateSimpleProduct.
+    * Customer_&_Address.
+    * customer_address.
+    * customer.
+    * GroupProudct.
+    * ImportentField.
+    * ProductAssignInCategory.
+    * stock_sources.
+
+
+
 
 
    

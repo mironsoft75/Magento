@@ -1,0 +1,3 @@
+email,_website,_store,confirmation,created_at,created_in,disable_auto_group_change,dob,firstname,gender,group_id,lastname,middlename,password_hash,prefix,rp_token,rp_token_created_at,store_id,suffix,taxvat,updated_at,website_id,password
+ajay@icecubedigital.com,base,default,1,,Default Store View,0,10/10/2008,Ankush,male,1,Lodhi,Singh,,,5481196900927de23bbbcc5ef4e45782,,1,,,,1,Text@123
+ankit@icecubedigital.com,base,default,1,,Default Store View,0,10/12/2008,Pinkesh,Male,1,xyz,,,,5481196900927de23bbbcc5ef4e45716,,1,,,,1,Text@123
