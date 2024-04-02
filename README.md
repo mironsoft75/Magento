@@ -2,7 +2,7 @@
 
 ## Magento Custom Extension
 
-## Icecube
+## 1.Icecube
 # 1. ExpendedCategoryTreeTab 
  *  Expand all selected category tabs and parent tabs on Admin Edit ProductPage.
 
@@ -26,12 +26,16 @@
   * icecube:reminder.
 
 
- ## CanonicalUrl
+ ## 2. CanonicalUrl
  # CmsPage
  * Working  on  all Cms pages.
 
- ## ProdcutBreadcrumbs
+ ## 3. ProdcutBreadcrumbs
  # FullPathBreadcrumbs
- * Working on Home page Products.
+ * Home page ,upsell and related  Products.
+
+ ## 4.CustomContect
+ # CustomRegistrationForm
+  * Added ui_component , Grid system  and All Form Data show in admin.
 
    
