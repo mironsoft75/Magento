@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page>
+<head>
+   <css src="ProdcutBreadcrumbs_FullPathBreadcrumbs::css/style.css"/>
+</head>
+    <body>
+    <referenceContainer name="page.top">
+        <block class="ProdcutBreadcrumbs\FullPathBreadcrumbs\Block\Crumbblock" name="crumbs" as="crumbs" template="ProdcutBreadcrumbs_FullPathBreadcrumbs::crumbs.phtml" cacheable="false" />
+    </referenceContainer>
+    </body>
+</page>
