@@ -1,0 +1,41 @@
+.customemodule-news .cusmo-news-list {
+	padding: 15px;
+	border: 1px solid #ccc;
+	display: block;
+	margin-top: -1px;
+}
+.customemodule-news .cusmo-news-list:nth-child(even){
+	background-color:#f1f1f1;
+}
+.customemodule-news .cusmo-news-list:nth-child(odd){
+	background-color:#FAFAFA;
+}
+.customemodule-news .cusmo-news-title {
+	font-weight:bold;
+	font-size:16px;
+	margin-bottom:5px;
+}
+.customemodule-news .cusmo-news-time {
+	font-size:25px;
+	color:#666;
+	font-style:italic;
+}
+.customemodule-news .pager {
+	margin-top:20px;
+	display:flex;
+}
+.customemodule-news .toolbar-amount {
+	margin-right:20px;
+}
+.customemodule-news .cusmo-news-desc {
+	margin-top:15px;
+}
+.customemodule-news a:hover {
+	text-decoration:none;
+}
+.customemodule-news {
+    background: aquamarine;
+    padding: 53px;
+    border-radius: 20px;
+    font-size: 24px;
+}

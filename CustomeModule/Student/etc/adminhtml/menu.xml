@@ -1,0 +1,7 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="CustomeModule_Student::studentdata" title="STUDENTDATA" translate="title" module="CustomeModule_Student" sortOrder="120" dependsOnModule="CustomeModule_Student" resource="CustomeModule_Student::studentdata"/>
+        <add id="CustomeModule_Student::student" title="STUDENT" translate="title" module="CustomeModule_Student" parent="CustomeModule_Student::studentdata" sortOrder="50" dependsOnModule="CustomeModule_Student" resource="CustomeModule_Student::student"/>
+        <add id="CustomeModule_Student::student_alldata" title="All Data" translate="title" module="CustomeModule_Student" parent="CustomeModule_Student::student" sortOrder="10" dependsOnModule="CustomeModule_Student" action="student/alldata" resource="CustomeModule_Student::student_alldata"/>
+    </menu>
+</config>

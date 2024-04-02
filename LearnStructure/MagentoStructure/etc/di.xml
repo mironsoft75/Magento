@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    
+    <preference for="LearnStructure\MagentoStructure\Api\Data\FormDataInterface" type="LearnStructure\MagentoStructure\Model\MagentoForm" />
+	<preference for="LearnStructure\MagentoStructure\Api\FormDataRepositoryInterface" type="LearnStructure\MagentoStructure\Model\FormDataRepository" />
+	
+	 <type name="Magento\Framework\Model\Entity\RepositoryFactory">
+        <arguments>
+            <argument name="entities" xsi:type="array">
+                <item name="LearnStructure\MagentoStructure\Api\Data\FormDataInterface" xsi:type="string">LearnStructure\MagentoStructure\Api\FormDataRepositoryInterface</item>
+            </argument>
+        </arguments>
+    </type>
+       
+
+</config>

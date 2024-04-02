@@ -1,0 +1,32 @@
+
+<table border="2">
+    <?php 
+       $dataCollection=$block->getListNews();
+    ?>
+		<thead>
+			<tr>
+				<th>News ID</th>
+				<th>Title</th>
+				<th>Student Name</th>
+				<th>Description</th>
+				<th>Status</th>
+				<th>Test</th>
+				<th>Created At</th>
+				<th>Updated At</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach ($dataCollection->getData() as $item): ?>
+				<tr>
+					<td><?php echo $item['news_id']; ?></td>
+					<td><?php echo $item['title']; ?></td>
+					<td><?php echo $item['StudentName']; ?></td>
+					<td><?php echo $item['description']; ?></td>
+					<td><?php echo $item['status']; ?></td>
+					<td><?php echo $item['test']; ?></td>
+					<td><?php echo $item['created_at']; ?></td>
+					<td><?php echo $item['updated_at']; ?></td>
+				</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>

@@ -1,0 +1,139 @@
+<!-- app/code/LearnStructure/MagentoStructure/view/frontend/templates/your_template_file.phtml -->
+
+<!-- this is second rule to use js  with requirejs file use -->
+<!-- <div class="example-element"  data-mage-init='{"custom_script": {}}'>A single div</div> -->
+<h1>Hello Magento!</h1>
+<div class="Magento-form">
+    <form action="<?php echo $block->getFormAction(); ?>" method="post" id="magento-form">
+        <div class="field">
+            <label for="name" class="Required">Name</label>
+            <input type="text" id="name" name="name">
+            <div class="name_error">
+                <span class="error"></span>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <button type="submit" title="Submit" class="action submit primary">
+                <span>Submit</span>
+            </button>
+            <button type="reset" title="Reset" class="action reset">
+                <span>Reset</span>
+            </button>
+        </div>
+
+    </form>
+</div>
+
+<?php
+$allFormData = $block->getAllFormData();
+?>
+
+
+
+<div class="allData" style="margin-top: 20px;">
+<table border="1" >
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($allFormData as $formData): ?>
+            <tr>
+                <td><?php echo $formData->getId(); ?></td>
+                <td><?php echo $formData->getName(); ?></td>
+                <td class="Delete"><a href="<?php echo $block->getDeleteUrl($formData->getId()); ?>">Delete</a></td>
+                <td class="Update"><a href="<?php echo $block->getUpdateUrl($formData->getId()); ?>">Update</a></td>
+              
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+</div>
+
+
+<!-- update model -->
+
+<!-- Popup form for Update Record -->
+<div id="updateModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <form id="updateForm" action="<?php echo $block->getUpdateFormAction(); ?>" method="post">
+            <!-- Add fields for updating the record here -->
+            <!-- <label for="update_id">ID:</label> -->
+            <input type="hidden" name="id" id="update_id" required>
+
+            <label for="update_name">Name:</label>
+            <input type="text" name="name" id="update_name" required>
+
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</div>
+
+
+<!-- This is first way of use js -->
+<!-- JavaScript to open and close the update popup form -->
+<script>
+    // Function to open the update popup form
+    function openModal() {
+        const updateModal = document.getElementById('updateModal');
+        updateModal.style.display = 'block';
+    }
+
+    // Function to close the update popup form
+    function closeModal() {
+        const updateModal = document.getElementById('updateModal');
+        updateModal.style.display = 'none';
+    }
+
+    // Open the update popup form when the "Update" link is clicked
+    document.querySelectorAll('.Update a').forEach(function (updateLink) {
+        updateLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            openModal();
+
+            // Populate the update form fields with the data from the row
+            const updateForm = document.getElementById('updateForm');
+            const row = this.closest('tr');
+            const cells = row.querySelectorAll('td');
+
+            updateForm.querySelector('#update_id').value = cells[0].textContent;
+            updateForm.querySelector('#update_name').value = cells[1].textContent;
+        });
+    });
+</script>
+
+
+<!-- this is fourth way  use of js -->
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "LearnStructure_MagentoStructure/js/custom_script": {
+                "slidername": "Silder Name Here",
+                "slideritems": "Silder Items Here"
+            }
+        }
+    }
+</script>
+
+<!-- this is fifth way of usr js -->
+<!-- <script>
+  require(
+      [
+          'jquery',
+      ],
+      function($) {
+         alert("Add Custom Js");
+      }
+  );
+</script> -->
+
+
+
+
+

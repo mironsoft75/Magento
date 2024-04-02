@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<head>
+   <css src="LearnStructure_MagentoStructure::css/custom-style.css"/>
+   <!-- this is  third  rule to use js with require js file use -->
+    <!-- <script src="LearnStructure_MagentoStructure::js/custom_script.js" /> -->
+</head>
+    <body>
+        <referenceContainer name="content">
+            <block class="LearnStructure\MagentoStructure\Block\First" name="first" template="LearnStructure_MagentoStructure::first.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

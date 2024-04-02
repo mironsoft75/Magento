@@ -1,0 +1,11 @@
+
+
+
+<?php
+$_productCollection = $block->getLoadedProductCollection();
+$products = $_productCollection->getItems();
+foreach ($products as $_product){
+    echo "Product id : " . $_product->getId() . " Product Name : " . $_product->getName(); 
+    echo "<br/>";
+}
+?>

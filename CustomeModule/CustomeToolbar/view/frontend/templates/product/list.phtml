@@ -1,0 +1,71 @@
+<style>
+    li.product-item {
+    display: flex;
+}
+
+.products-list ol.product-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.products-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.products-list ol.product-items li.product-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 25%;
+}
+
+
+
+.products-list ol.product-items li.product-item .product-image img {
+    width: 205px;
+}
+</style>
+
+<?php
+/** @var \[Vendor]\CustomSorting\Block\Product\ListProduct $block */
+$products = $block->getProductCollection()->addAttributeToSort('price', 'desc');
+?>
+
+<div class="custom-sort-by">
+    <div class="product-sort-by active" id="product-sort-by">Sort By</div>
+    <ul id="product-sort-by-content" class="product-sort-by-content" >
+        <li class="sort-option" data-sort="position">Default</li>
+        <li class="sort-option" data-sort="name">Alphabetical</li>
+        <li class="sort-option" data-sort="price_asc">Price: Low to High</li>
+        <li class="sort-option" data-sort="price_desc">Price: High to Low</li>
+    </ul>
+</div>
+
+<div class="products-list">
+    <ol class="product-items">
+        <?php foreach ($products as $product) : ?>
+            <!-- Product rendering code -->
+            <li class="product-item">
+                <div class="product-image">
+                    <?php
+                    $imageHelper = $this->helper('Magento\Catalog\Helper\Image');
+                    $image_url = $imageHelper->init($product, 'product_page_image_large')->setImageFile($product->getImage())->getUrl();
+                    ?>
+                    <img src="<?= $image_url ?>" alt="<?= $product->getName() ?>" />
+                </div>
+                <div class="product-details">
+                    <strong><?= $product->getName() ?></strong>
+                    <span><?= $product->getPrice() ?></span>
+                    <!-- Add more product details as needed -->
+                </div>
+            </li>
+            <!-- End of Product rendering code -->
+        <?php endforeach; ?>
+    </ol>
+</div>
+
+

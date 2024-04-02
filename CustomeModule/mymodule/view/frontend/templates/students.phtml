@@ -1,0 +1,14 @@
+<?php
+$blockObj= $block->getLayout()->createBlock('CustomeModule\mymodule\Block\Student');
+$students = $blockObj->getStudents(); ?>
+<div class="student-list">
+    <h2>Student List</h2>
+    <ul> 
+        <?php foreach ($students as $student) : ?>
+            <li>
+                <strong>Name: </strong><?php echo $student['StudentName']; ?><br>
+                <strong>Description: </strong><?php echo $student['description']; ?><br>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

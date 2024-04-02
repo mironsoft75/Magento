@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="footer_links">
+			<block class="CustomeModule\Student\Block\Link" name="StudentModule_link" template="CustomeModule_Student::link.phtml" />
+        </referenceBlock>
+    </body>
+</page>
+
+<!-- <?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+       <referenceBlock name="footer_links">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="installSchema/general/enable" name="InstallSchema-link">
+            <arguments>
+                 <argument name="label" xsi:type="string" translate="true">InstallSchema Data</argument>
+                 <argument name="path" xsi:type="string">InstallSchema</argument>
+            </arguments>
+        </block>
+      </referenceBlock>
+    </body>
+</page> -->

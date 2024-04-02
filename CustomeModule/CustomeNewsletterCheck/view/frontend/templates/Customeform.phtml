@@ -1,0 +1,21 @@
+<?php
+use Magento\Customer\Helper\Address;
+$formData = $block->getFormData();
+?>
+ <?php if ($block->isNewsletterEnabled()): ?>
+            <div class="field choice newsletter">
+                <input type="checkbox"
+                       name="is_subscribed"
+                       title="<?= $escaper->escapeHtmlAttr(__('Sign up for private mailing list (you may unsubscribe at any time)')) ?>"
+                       value="1"
+                       id="i_subscribed"
+                       <?php if ($formData->getIsSubscribed()): ?>checked="checked"<?php endif; ?>
+                       class="checkbox">
+                <label for="is_subscribed" class="label">
+                    <span><?= $escaper->escapeHtml(__('Sign up for private mailing list (you may unsubscribe at any time)')) ?></span>
+                </label>
+            </div>
+            
+<?php endif ?>
+
+

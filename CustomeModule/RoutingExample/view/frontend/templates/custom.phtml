@@ -1,0 +1,46 @@
+<style>
+    /* Add your CSS styles here */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+    }
+    th, td {
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <?php for ($c = 1; $c <= 10; $c++): ?>
+                <th>Column <?= $c ?></th>
+            <?php endfor; ?>
+        </tr>
+    </thead>
+    <tbody>
+        <?php for ($i = 1; $i <= 25; $i++): ?>
+            <tr>
+                <td><?= $i ?></td>
+                <td><?= getRandomName() ?></td>
+                <?php for ($j = 1; $j <= 10; $j++): ?>
+                    <td><?= getRandomName() ?></td>
+                <?php endfor; ?>
+            </tr>
+        <?php endfor; ?>
+    </tbody>
+</table>
+
+<?php
+function getRandomName() {
+    $names = ["John", "Jane", "Michael", "Emma", "William", "Olivia", "James", "Ava", "Robert", "Sophia"];
+    $randomIndex = array_rand($names);
+    return $names[$randomIndex];
+}
+?>

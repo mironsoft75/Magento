@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>
+            Simple Magento 2 Module
+        </title>
+        <script src="Chapagain_HelloWorld::js/ajax.js"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+        <!-- load data by block -->
+            <!-- <block class="Chapagain\HelloWorld\Block\HelloWorld" name="helloworld" template="Chapagain_HelloWorld::helloworld.phtml" cacheable="false" /> -->
+            <!-- load data by ajex -->
+            <!-- <block class="Magento\Framework\View\Element\Template" template="Chapagain_HelloWorld::helloworld.phtml"/>             -->
+            <!-- load data by magento catelog product -->
+            <block class="Magento\Catalog\Block\Product\ListProduct" name="Custome.Category.Prodcut" template="Chapagain_HelloWorld::CustomeCategoryProduct.phtml" cacheable="false" />  
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,80 @@
+<?php
+$ids = [1, 2, 15];
+$categoryProducts = $block->getProductCollectionByCategories($ids);
+foreach ($categoryProducts as $product) {
+    echo 'Name: ' . $product->getName() . '<br>';
+    echo 'Price: ' . $product->getPrice() . '<br>';
+    echo 'Short Description: ' . $product->getShortDescription() . '<br>';
+    echo 'Description: ' . $product->getDescription() . '<br>';
+    echo 'Product URL: ' . $product->getProductUrl() . '<br>';
+    
+    // Image URL
+    $image = $block->getImageUrl($product, 'product_base_image');
+    echo 'Image URL: ' . $image . '<br>';
+    
+    // Thumbnail Image URL
+    $thumbnail = $block->getImageUrl($product, 'product_thumbnail_image');
+    echo 'Thumbnail URL: ' . $thumbnail . '<br>';
+    
+    // Rating
+    if ($product->getRatingSummary()) {
+        echo 'Rating: ' . $product->getRatingSummary()->getRatingSummary() . '<br>';
+    } else {
+        echo 'Rating: No ratings available<br>';
+    }
+    
+    echo '<br>';
+}
+?>
+
+
+
+<style>
+    .products-list {
+        margin: 20px;
+    }
+
+    .product-items {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .product-item {
+        width: calc(33.33% - 20px);
+        border: 1px solid #ccc;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .product-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .product-name {
+        font-weight: bold;
+    }
+
+    .product-price {
+        color: #e60000;
+        font-size: 1.2em;
+    }
+
+    .product-short-description {
+        margin-top: 10px;
+    }
+
+    .product-description {
+        margin-top: 10px;
+    }
+</style>
+
+
+
+
+<button id="load-data-button">Load Data</button>
+<div id="product-list">
+
+</div>

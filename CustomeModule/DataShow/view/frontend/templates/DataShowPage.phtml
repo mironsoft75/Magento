@@ -1,0 +1,111 @@
+<div class="Insert-data">
+    <a class="action primary" href="<?= $block->getUrl('DataShow/index/insert'); ?>">Add Record</a>
+</div><br>
+
+<!-- Table to display data -->
+<table border="2">
+    <!-- Table headers -->
+    <?php 
+       $dataCollection=$block->getListNews();
+    ?>
+    <thead>
+        <tr>
+            <th>News ID</th>
+            <th>Title</th>
+            <th>Student Name</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Test</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($dataCollection->getData() as $item): ?>
+            <tr>
+                <td><?php echo $item['news_id']; ?></td>
+                <td><?php echo $item['title']; ?></td>
+                <td><?php echo $item['StudentName']; ?></td>
+                <td><?php echo $item['description']; ?></td>
+                <td><?php echo $item['status']; ?></td>
+                <td><?php echo $item['test']; ?></td>
+                <td><?php echo $item['created_at']; ?></td>
+                <td><?php echo $item['updated_at']; ?></td>
+                <td class="Delete">
+                    <a href="<?php echo $block->getUrl('DataShow/index/delete', ['id' => $item['news_id']]); ?>" onclick="return confirm('Are you sure you want to delete this data?')">Delete</a>
+                </td>
+                <td class="Update">
+                    <a href="<?php echo $block->getUrl('DataShow/index/edit', ['id' => $item['news_id']]); ?>">Update</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+
+
+
+<!-- Popup form for Update Record -->
+<div id="updateModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <form id="updateForm" action="<?php echo $block->getUrl('DataShow/index/Edit'); ?>" method="post">
+            <!-- Add fields for updating the record here -->
+            <label for="update_id">ID:</label>
+            <input type="hidden" name="update_id" id="update_id" required>
+
+            <label for="update_title">Title:</label>
+            <input type="text" name="update_title" id="update_title" required>
+
+            <label for="update_student_name">Student Name:</label>
+            <input type="text" name="update_student_name" id="update_student_name" required>
+
+            <label for="update_description">Description:</label>
+            <textarea name="update_description" id="update_description" required></textarea>
+
+            <label for="update_status">Status:</label>
+            <input type="number" name="update_status" id="update_status" required>
+
+            <label for="update_test">Test:</label>
+            <input type="number" name="update_test" id="update_test" step="0.01" required>
+
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</div>
+
+<!-- JavaScript to open and close the update popup form -->
+<script>
+    // Function to open the update popup form
+    function openModal() {
+        const updateModal = document.getElementById('updateModal');
+        updateModal.style.display = 'block';
+    }
+
+    // Function to close the update popup form
+    function closeModal() {
+        const updateModal = document.getElementById('updateModal');
+        updateModal.style.display = 'none';
+    }
+
+    // Open the update popup form when the "Update" link is clicked
+    document.querySelectorAll('.Update a').forEach(function (updateLink) {
+        updateLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            openModal();
+
+            // Populate the update form fields with the data from the row
+            const updateForm = document.getElementById('updateForm');
+            const row = this.closest('tr');
+            const cells = row.querySelectorAll('td');
+
+            updateForm.querySelector('#update_id').value = cells[0].textContent;
+            updateForm.querySelector('#update_title').value = cells[1].textContent;
+            updateForm.querySelector('#update_student_name').value = cells[2].textContent;
+            updateForm.querySelector('#update_description').value = cells[3].textContent;
+            updateForm.querySelector('#update_status').value = cells[4].textContent;
+            updateForm.querySelector('#update_test').value = cells[5].textContent;
+        });
+    });
+</script>

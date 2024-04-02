@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+     <type name="Magento\Framework\Console\CommandList">
+            <arguments>
+                <argument name="commands" xsi:type="array">
+                    <item name="VartualType" xsi:type="object">CustomeModule\VertualType\Console\FirstCommand</item>
+                    <item name="VartualType2" xsi:type="object">CustomeModule\VertualType\Console\SecondCommand</item>
+                </argument>
+            </arguments>
+        </type>
+
+            <virtualType name="HelperClassB" type="CustomeModule\VertualType\Helper\HelperClassA">
+                        <arguments>
+                            <argument name="a" xsi:type="string">30</argument>
+                        </arguments> 
+            </virtualType>
+
+       <type name="CustomeModule\VertualType\Console\SecondCommand">
+            <arguments>
+                <argument name="helperClass" xsi:type="object">HelperClassB</argument>
+            </arguments>
+     </type>
+
+
+      <type name="CustomeModule\VertualType\Helper\HelperClassA">
+            <arguments>
+                <argument name="a" xsi:type="string">25</argument>
+            </arguments>
+     </type>
+
+        
+</config>

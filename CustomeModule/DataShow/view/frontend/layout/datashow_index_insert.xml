@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+    <title>Insert New Record</title>
+		<css src="CustomeModule_DataShow::css/customemodule.InsertRecord.css" />
+	</head>
+<referenceContainer name="content">
+
+<block class="CustomeModule\DataShow\Block\Insert" name="DataShow_index_insert" template="CustomeModule_DataShow::Insertdata.phtml" />
+
+</referenceContainer>
+
+</page>

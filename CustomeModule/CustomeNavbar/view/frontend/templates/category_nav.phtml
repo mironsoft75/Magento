@@ -1,0 +1,30 @@
+<div class="custom-navbar">
+    <ul class="parent-categories">
+        <?php $categories = $block->getCategoryCollection(); ?>
+        <?php foreach ($categories as $category) : ?>
+            <li>
+                <a class="customeitem" href="<?php echo $category->getUrl(); ?>"><?php echo $category->getName(); ?></a>
+                <?php $subCategories = $category->getChildrenCategories(); ?>
+                <?php if ($subCategories->count() > 0) : ?>
+                    <ul class="sub-categories">
+                        <?php foreach ($subCategories as $subCategory) : ?>
+                            <li class ="subhober"><a class="customeitem "  href="<?php echo $subCategory->getUrl(); ?>"><?php echo $subCategory->getName(); ?></a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+
+<div class="breadcrumbs">
+    <ul class="items">
+        <?php if ($block->getCurrentCategory()): ?>
+            <li class="item home"><a href="<?php echo $block->getBaseUrl(); ?>">Home</a></li>
+        <?php endif; ?>
+        <?php echo   $block->getBreadcrumbs(); ?>
+    </ul>
+</div>
+
+
+

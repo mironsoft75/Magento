@@ -1,0 +1,36 @@
+<div>
+<h1>Custom Data::  <?php  $productData = $block->getProductCustomData('Banana');?></h1>
+</div>
+<?php
+$jsonProductData = json_encode($productData,JSON_PRETTY_PRINT);
+// echo '<pre>';
+// print_r($productData);
+// echo '</pre>';
+
+
+?>
+
+<table border="2">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Extension Attributes</th>
+            <th>Another Attributes</th>
+            <th>Third Attributes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><?php echo $productData['name']; ?></td>
+            <td><?php echo $productData['id']; ?></td>
+            <td><?php echo $productData['price']; ?></td>
+            <td><?php echo $productData['description']; ?></td>
+            <td><?php echo $productData['custom_data']; ?></td>
+            <td><?php echo $productData['another_data']; ?></td>
+            <td><?php echo $productData['third_data']; ?></td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+         <referenceContainer name="content">
+            <block class="CustomeModule\mymodule\Block\Hello" name="hello_message" template="CustomeModule_mymodule::hello.phtml"/>
+        </referenceContainer>
+
+           <referenceContainer name="content">
+            <block class="CustomeModule\mymodule\Block\Student" name="student_list" template="CustomeModule_mymodule::students.phtml"/>
+        </referenceContainer>
+    </body>
+</page>
+
+
+
+
+
+
+

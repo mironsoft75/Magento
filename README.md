@@ -38,4 +38,36 @@
  # CustomRegistrationForm
   * Added ui_component , Grid system  and All Form Data show in admin.
 
+ ## 5.LearnStructure
+  # LearnStructure
+  * Curd Operation by use  magento Structure use. 
+
+  ## 5.CustomeModule(Practice , Create Extension)
+   * CustomeNavbar.
+   * CustomeNewsletterCheck.
+   * CustomeToolbar.
+   * DataShow.
+   * ExtensionExample.
+   * mymodule.
+   * News.
+   * OverrideBlock.
+   * OverrideController.
+   * OverrideHelper.
+   * OverrideModel.
+   * OverridePhtml.
+   * Plugin.
+   * PluginExample.
+   * ProxeyExample.
+   * RoutingExample.
+   * Student.
+   * VertualType.
+
+  ## 6.Chapagain(how to include Ajex). 
+
+
+
+   
+
+    
+
    

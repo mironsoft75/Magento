@@ -1,0 +1,12 @@
+<!-- app/code/CustomeModule/PluginExample/etc/di.xml -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="custommodule_pluginexample_product_price_plugin" type="CustomeModule\PluginExample\Plugin\ProductPricePlugin" sortOrder="11" disabled="false"/>
+    </type>
+
+     <type name="CustomeModule\PluginExample\Model\Page\PageName">
+        <plugin name="testplugin" type="CustomeModule\PluginExample\Plugin\Name" sortOrder="9" disabled="false"/>
+    </type>
+   
+</config>

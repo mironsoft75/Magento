@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="icecube" translate="label" sortOrder="89">
+            <label>Icecube</label>
+        </tab>
+        <section id="testimonial" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Testimonial</label>
+            <tab>icecube</tab>
+            <resource>Icecube_Testimonial::config_testimonial</resource>
+            <group id="general" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="0"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Module Enabled</label>
+                    <comment>Module Enabled </comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+          
+            </group>
+            <group id="Storefront" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Storefront</label>
+                <field id="new_link" translate="label comment" type="text" sortOrder="0"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>News link</label>
+                    <comment>This is new link</comment>
+                </field>
+                <field id="set_limit"  translate="label" type="text" sortOrder="1"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Set the number of Limit</label>
+                    <comment>Set the number of limit for showing latest news</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

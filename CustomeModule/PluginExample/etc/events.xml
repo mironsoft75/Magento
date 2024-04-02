@@ -1,0 +1,8 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="checkout_cart_product_add_after">
+        <observer name="custom_product_cart_count_observer" instance="CustomeModule\PluginExample\Observer\CustomProductCartCount" />
+    </event>
+    <event name="wishlist_add_product">
+        <observer name="custom_product_wishlist" instance="CustomeModule\PluginExample\Observer\CustomeProductWishlistCount" />
+    </event>
+</config>

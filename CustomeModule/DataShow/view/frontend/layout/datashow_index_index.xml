@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+    <title>Student data</title>
+		<css src="CustomeModule_DataShow::css/customemodule.DataShow.css" />
+	</head>
+	<body>
+        <referenceContainer name="content">
+            <block class="CustomeModule\DataShow\Block\DataShowPage" name="DataShow_Data" template="CustomeModule_DataShow::DataShowPage.phtml" />
+        </referenceContainer>
+    </body>
+</page>

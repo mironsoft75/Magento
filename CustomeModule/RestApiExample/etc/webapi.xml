@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+       <route method="GET" url="/V1/product/getProductById/:id">
+        <service class="CustomeModule\RestApiExample\Api\ProductRepositoryInterface" method="getProductById"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+        </route>
+
+        <route method="GET" url="/V1/posts">
+        <service class="CustomeModule\RestApiExample\Api\PostRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+        </route>
+
+          <route method="GET" url="/V1/product/getAllProducts">
+        <service class="CustomeModule\RestApiExample\Api\ProductolddataRepositoryInterface" method="getAllProducts"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+       </route>
+
+
+    <route url="/V1/product/update/:productId" method="PUT">
+        <service class="CustomeModule\RestApiExample\Api\ProductolddataRepositoryInterface" method="updateProduct"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+     <route url="/V1/product/delete/:productId" method="DELETE">
+    <service class="CustomeModule\RestApiExample\Api\ProductolddataRepositoryInterface" method="deleteProduct"/>
+    <resources>
+        <resource ref="anonymous"/>
+    </resources>
+    </route>
+
+
+   
+</routes>

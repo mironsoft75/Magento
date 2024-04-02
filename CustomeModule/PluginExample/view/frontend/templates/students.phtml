@@ -1,0 +1,26 @@
+<?php
+$blockObj= $block->getLayout()->createBlock('CustomeModule\PluginExample\Block\Student');
+$students = $blockObj->getStudents(); ?>
+<div class="student-list">
+<h1>This is content Page you are write</h1>
+    <h2>Student List</h2>
+    <ul> 
+        <?php foreach ($students as $student) : ?>
+            <li>
+                <strong>Name: </strong><?php echo $student['StudentName']; ?><br>
+                <strong>Description: </strong><?php echo $student['description']; ?><br>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+
+<div class="pulgin-content">
+  <?php
+    $block->pagetitleobj()->setName("PluginTest"); 
+
+   echo   $block->pagetitleobj()->getName(); 
+
+  
+  
+  ?>
+</div>
